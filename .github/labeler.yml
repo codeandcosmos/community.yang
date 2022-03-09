@@ -42,7 +42,7 @@ labels:
       - '\bbug[s]?\b'
       - '\bnot working\b'
     exclude: []
-  'need wanted':
+  'help wanted':
     include:
       - '\bhelp( me)?\b'
     exclude:

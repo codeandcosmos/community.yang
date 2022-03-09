@@ -20,6 +20,7 @@ from ansible.module_utils._text import to_bytes, to_native
 
 
 def to_list(val):
+    # check instance type
     if isinstance(val, (list, tuple, set)):
         return list(val)
     elif val is not None:

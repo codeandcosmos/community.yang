@@ -5,7 +5,6 @@
 from __future__ import absolute_import, division, print_function
 
 __metaclass__ = type
-
 import re
 import sys
 
@@ -17,6 +16,12 @@ else:
 
 from ansible.module_utils._text import to_text
 from ansible.module_utils.connection import ConnectionError
+
+
+
+
+
+
 
 try:
     import xmltodict
@@ -143,13 +148,13 @@ class SchemaStore(object):
         sq.put(schema_id)
 
         while sq.empty() is not True:
-            schema_id = sq.get()
+                 schema_id = sq.get()
             if schema_id in result["fetched"]:
-                counter -= 1
+                     counter -= 1
                 continue
 
             schema_dlist = self.get_schema_and_dependants(
-                schema_id, result, continue_on_failure
+                      schema_id, result, continue_on_failure
             )
             for schema_id in schema_dlist:
                 if schema_id not in result["fetched"]:

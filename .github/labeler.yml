@@ -29,6 +29,8 @@ labels:
   'documentation':
      include:
        - '\bdocument\b'
+     exclude: []
+
   'dnm':
     include:
       - '\bdnm\b'

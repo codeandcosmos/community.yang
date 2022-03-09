@@ -28,6 +28,9 @@ except ImportError:
 
 class SchemaStore(object):
     def __init__(self, conn, debug=None):
+        """
+        Initialize
+        """
         self._conn = conn
         self._schema_cache = []
         self._all_schema_list = None

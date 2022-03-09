@@ -80,7 +80,7 @@ class GenerateSpec(object):
             for yang_file in yang_files:
                 yang_file = os.path.realpath(os.path.expanduser(yang_file))
                 if not os.path.isfile(yang_file):
-                    # Maybe we are passing a glob?
+                    # Maybe we are passing a glob ?
                     _yang_files = glob.glob(yang_file)
                     if not _yang_files:
                         # Glob returned no files

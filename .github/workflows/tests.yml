@@ -31,8 +31,8 @@ jobs:
       - name: Install test requirements
         run: pip3 install -r test-requirements.txt
    
-      - name: Run pylint
-        run: pylint --verbose -ry plugins
+#       - name: Run pylint
+#         run: pylint --verbose -ry plugins
       
       - name: Run black
         run: black -l79 --check .

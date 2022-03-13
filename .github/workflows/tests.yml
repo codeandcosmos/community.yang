@@ -29,7 +29,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install ansible-test==1.0.1
 #       - name: Perform sanity testing with ansible-test
-#         uses: rohitthakur2590/ansible-test-gh-action@release/v1
+#         uses: ansible-community/ansible-test-gh-action@release/v1
 #         with:
 #           ansible-core-version: stable-2.12
 #           testing-type: sanity

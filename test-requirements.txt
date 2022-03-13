@@ -1,5 +1,5 @@
 ncclient
-pyang
+pyang==2.5.2
 xmltodict
 flake8==3.9.2
 ansible-test==1.0.1

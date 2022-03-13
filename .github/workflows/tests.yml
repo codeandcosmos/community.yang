@@ -1,7 +1,7 @@
-name: ansible-tests
+name: Tests
 
 on:
-  create: # is used for publishing to PyPI and  TestPyPI
+  create: # is used for publishing to PyPI and TestPyPI
     tags: # any tag regardless of its name, no branches
       - "**"
   push: # only publishes pushes to the main branch to TestPyPI
@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        python: [3.6]
+        python-version: [3.8]
 
     steps:
       - uses: actions/checkout@v2 
@@ -31,10 +31,8 @@ jobs:
       - name: Install test requirements
         run: pip3 install -r test-requirements.txt
    
-
-#       - name: Run pylint
-#         run: pylint --verbose -ry plugins
-
+      - name: Run pylint
+        run: pylint --verbose -ry plugins
       
       - name: Run black
         run: black -l79 --check .

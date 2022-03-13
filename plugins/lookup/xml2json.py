@@ -10,7 +10,7 @@ __metaclass__ = type
 DOCUMENTATION = """
 lookup: xml2json
 author: Ganesh Nalawade (@ganeshrn)
-short_description: Converts xml input to json structure output by mapping it against corresponding Yang model
+short_description: Converts xml input to the json structure output by mapping it against corresponding Yang model
 description:
   - This plugin lookups the input xml data, typically Netconf rpc response received from remote host
     and convert it to json format as defined by RFC 7951 JSON Encoding of Data Modeled with YANG

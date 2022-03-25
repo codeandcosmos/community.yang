@@ -69,7 +69,7 @@ jobs:
 #           test-deps: >-
 #             ansible.netcommon
 #             ansible.utils
-      - name: Install tox
-        run: pip install tox
-      - name: Run tox on python version from matrix
-        run: tox -e py
+#       - name: Install tox
+#         run: pip install tox
+#       - name: Run tox on python version from matrix
+#         run: tox -e py

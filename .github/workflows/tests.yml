@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: [3.6]
 
     steps:
       - uses: actions/checkout@v2 
@@ -61,6 +61,9 @@ jobs:
 #       - name: Run Unit test
 #         run: |
 #           ansible-test units --python 3.6
+      - name: Install python requirements for ${{ steps.collection.outputs.known_as}}
+        run: python3 -m pip install -r requirements.txt -r test-requirements.txt pytest-ansible-units
+        
       - name: Perform Unit testing with ansible-test
         uses: rohitthakur2590/ansible-test-gh-action@release/v1
         with:

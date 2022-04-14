@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -24,22 +24,22 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       
-      - name: Prepare the collection
-        id: prepare_collection
-        uses: ./.github/actions/ansible_collection
+#       - name: Prepare the collection
+#         id: prepare_collection
+#         uses: ./.github/actions/ansible_collection
       
-      - name: Install test requirements
-        run: pip3 install -r test-requirements.txt
+#       - name: Install test requirements
+#         run: pip3 install -r test-requirements.txt
    
 #       - name: Run pylint
 #         run: pylint --verbose -ry plugins
       
-      - name: Run black
-        run: black -l79 --check .
+#       - name: Run black
+#         run: black -l79 --check .
       
-      - name: Run ansible-test sanity
-        run: ansible-test sanity --python ${{ matrix.python-version }} --requirements
-        working-directory: /usr/share/ansible/collections/ansible_collections/${{ steps.prepare_collection.outputs.collection_namespace }}/${{ steps.prepare_collection.outputs.collection_name }}
+#       - name: Run ansible-test sanity
+#         run: ansible-test sanity --python ${{ matrix.python-version }} --requirements
+#         working-directory: /usr/share/ansible/collections/ansible_collections/${{ steps.prepare_collection.outputs.collection_namespace }}/${{ steps.prepare_collection.outputs.collection_name }}
 #       - uses: actions/checkout@v2
 #       - name: Setup Python
 #         uses: actions/setup-python@v2
@@ -61,14 +61,14 @@ jobs:
 #       - name: Run Unit test
 #         run: |
 #           ansible-test units --python 3.6
-#       - name: Perform Unit testing with ansible-test
-#         uses: rohitthakur2590/ansible-test-gh-action@release/v1
-#         with:
-#           ansible-core-version: stable-2.12
-#           testing-type: units
-#           test-deps: >-
-#             ansible.netcommon
-#             ansible.utils
+      - name: Perform Unit testing with ansible-test
+        uses: rohitthakur2590/ansible-test-gh-action@release/v1
+        with:
+          ansible-core-version: stable-2.12
+          testing-type: units
+          test-deps: >-
+            ansible.netcommon
+            ansible.utils
       - name: Install tox
         run: pip install tox
       - name: Run tox on python version from matrix
